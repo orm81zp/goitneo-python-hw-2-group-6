@@ -1,4 +1,4 @@
-from bot_utils import show_help, is_contact_exists, change_contact, add_contact, show_phone, parse_input, is_yes_prompt, InputBotExseption, ArgsBotExseption
+from bot_utils import show_help, change_contact, add_contact, show_phone, parse_input, show_all, InputBotExseption
 
 
 def main():
@@ -17,32 +17,22 @@ def main():
             elif command == "hello":
                 print("How can I help you?")
             elif command == "add":
-                if is_contact_exists(args, contacts):
-                    user_input = input("Contact already exists, update? (y or n): ")
-                    if is_yes_prompt(user_input):
-                        print(change_contact(args, contacts)) 
-                else:
-                    print(add_contact(args, contacts))
+                print(add_contact(args, contacts))
             elif command == "change":
                 print(change_contact(args, contacts))    
             elif command == "phone":
                 print(show_phone(args, contacts))    
             elif command == "all":
-                if len(contacts):
-                    for name, phone in contacts.items():
-                        print(f"{name}: {phone}")
-                else:
-                    print("There are no contacts to display.")
+                print(show_all(contacts))
             elif command == "help":
                 show_help()
             else:
                 print("Invalid command. Type \"help\" to see a list of commands.")
         except InputBotExseption:
             print("Please, enter a command to begin.")
-        except ArgsBotExseption as error:
-            print(error)
-        except Exception:
-            print("Oops! Something went wrong.")
+        except Exception as err:
+            print("Oops! Something went wrong.", err)
+
 
 if __name__ == "__main__":
     main()
