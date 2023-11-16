@@ -8,7 +8,7 @@ File name `bot.py`. The file contains a main function and be called dirrectly fr
 
 ## What was done
 
-Added **input_error** decorator for following methods: `change_contact`, `add_contact`, `show_phone`. It takes an error message as an argument and return one if an exception was caught.
+Added improved **input_error** decorator for following methods: `change_contact`, `add_contact`, `show_phone`. It takes an error message as an argument and return one as a message if an exception was caught.
 
 Examples of the use:
 
@@ -17,7 +17,7 @@ Examples of the use:
 def change_contact(args, contacts):
 ```
 
-_change_contact function expects two arguments: name and phone number_
+_function expects two arguments: **name** and **phone number**_
 
 or
 
@@ -26,7 +26,7 @@ or
 def show_phone(args, contacts):
 ```
 
-_show_phone function expects one argument: name_
+_function expects only one argument: **name**_
 
 ## How to run
 
@@ -51,11 +51,11 @@ The folder `bot_utils` contains all the important utilities for the Bot to work.
 
 ## Description
 
-File name `address_book.py`. The file contains all neccessary classes and functions.
+File name `address_book.py`. The file contains a main function with testing implementation and be called dirrectly from the console `python address_book.py`.
 
 ## How to run
 
-Example of the use:
+Example of the use manually:
 
 **Creating a new address book**
 
